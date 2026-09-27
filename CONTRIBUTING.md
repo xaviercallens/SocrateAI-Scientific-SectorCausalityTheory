@@ -39,8 +39,7 @@ theory but whether it meets the evidence standard below — a well-sourced argum
 - Build against the pinned Mathlib (`lean/lakefile.lean`); do not bump the pin in a content PR.
 - **Footprint:** only `propext`, `Classical.choice`, `Quot.sound`. No `sorry`, no `admit`, no new axioms.
 - Run `python3 scripts/regen_axiom_audit.py` so every theorem gets its generated `#print axioms` line;
-  run it with `--check` before opening a PR (the CI workflow in `ci/` does the same once activated —
-  see `ci/README.md`).
+  run it with `--check` before opening a PR; CI (`.github/workflows/ci.yml`) runs it too.
 - **Negative controls:** include at least one deliberately false variant that fails (describe it in
   the PR; do not commit it as a theorem).
 - **Docstring must state what is *not* proved.** The kernel certifies the proof, never the statement;

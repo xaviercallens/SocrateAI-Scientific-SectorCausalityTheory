@@ -1,23 +1,14 @@
-# CI workflow — written, tested locally, not yet active
+# CI
 
-`github-workflows-ci.yml` is this repository's GitHub Actions workflow. It is parked here, rather than
-in `.github/workflows/`, because the token used to publish the repository lacked the `workflow`
-scope that GitHub requires to create workflow files. **Until it is moved, no CI runs.**
+The workflow is `.github/workflows/ci.yml`. (It was briefly parked in this directory because the token
+first used to publish the repository lacked GitHub's `workflow` scope.)
 
-To activate it (owner, once):
+| Job | What it checks |
+|---|---|
+| `lean` | `lake exe cache get && lake build`, then `scripts/check_build_log.py --expect 116`: standard axioms only, no `sorry`, all 116 theorems audited (Lean's wrapped footprint lines handled) |
+| `mcp-server` | `pytest` for the MCP server: the case table matches the paper; planted-defect controls fail as they must |
+| `notebooks` | all three reproduction notebooks execute top to bottom (outputs to a scratch dir, not committed) |
+| `audit` | `scripts/regen_axiom_audit.py --check` and `scripts/make_references.py --check` |
 
-```bash
-gh auth refresh -h github.com -s workflow      # grants the workflow scope (interactive)
-mkdir -p .github/workflows
-git mv ci/github-workflows-ci.yml .github/workflows/ci.yml
-git commit -m "Activate CI" && git push
-```
-
-What it runs, each step already exercised locally before publication:
-
-| Job | What it checks | Local evidence |
-|---|---|---|
-| `lean` | `lake exe cache get && lake build`, then `scripts/check_build_log.py --expect 116`: standard axioms only, no `sorry`, all 116 theorems audited (wrapped footprint lines handled) | build succeeded (8792 jobs), 116 audited, 0 `sorry`; the checker fails on four planted defects |
-| `mcp-server` | `pytest` for the MCP server (case table matches the paper; planted-defect controls) | 25 passed, 2 opt-in skips (27/27 with `SCT_SLOW=1` and a rusty-SUNDIALS binary) |
-| `notebooks` | all three notebooks execute top to bottom | each re-executed independently with 0 errors |
-| `audit` | `regen_axiom_audit.py --check`, `make_references.py --check` | both pass |
+Each job was exercised locally before the workflow was committed; see `LEDGER.md` (SCT-001) for the
+results of the first run on GitHub.
