@@ -39,6 +39,7 @@ lives.
 | See the full technical report (six dated addenda) | [`papers/duality_sector.pdf`](papers/duality_sector.pdf) |
 | See the cosmological extension | [`papers/cosmology_sectors.pdf`](papers/cosmology_sectors.pdf) |
 | Query the theory programmatically (including as an AI agent) | [`mcp-server/`](mcp-server/) |
+| See what would falsify the theory, and where it goes next | [`docs/ROADMAP.md`](docs/ROADMAP.md) — falsifiers, research tracks, communication plan, open tasks |
 | Contribute, discuss, or contest a claim | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 
 ## What is here, and why it is self-contained
