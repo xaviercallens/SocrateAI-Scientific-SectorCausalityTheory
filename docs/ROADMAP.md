@@ -91,7 +91,7 @@ Its `leangraph` accepts a root/target and has not yet been tried on this reposit
 - *Deliverable:* a browsable map that makes "where the Lean stops" visible.
 
 **A4. Close the inherited-verification gap.** *(S, running)* Comparator's second kernel re-run *in this
-repository* for all 14 modules (9/14 accepted when this was written), recorded as `SCT-003`.
+repository* for all 14 modules (9/14 accepted when this was written), to be recorded as `SCT-005`.
 
 ### Track B — Numerical: strengthen the causal claim where it is weakest
 
@@ -233,7 +233,7 @@ Tasks are sized for one contributor. Agents should use the MCP server (`mcp-serv
 
 | When | Milestone | Decision it triggers |
 |---|---|---|
-| Days | CI green on GitHub; Comparator 14/14 in this repo (`SCT-003`); foundation paper v3 archived | P0 complete; P1 may start |
+| Days | CI green on GitHub; Comparator 14/14 in this repo (`SCT-005`); foundation paper v3 archived | P0 complete; P1 may start |
 | 2–4 weeks | Positioning audit written; B1 pre-registered; A3 map published | If the audit finds the criterion *fully* subsumed by anomaly matching, reframe SCT around the causal method and the taxonomy only |
 | 1–3 months | B1 run; A1 attempted; C3 order-of-magnitude done | If B1 fails (effect tracks energy), revise the causal section before any P3 submission |
 | 3–6 months | Perspective paper on arXiv; formal-methods submission | Go/no-go on C1 outreach depends on B1 |
