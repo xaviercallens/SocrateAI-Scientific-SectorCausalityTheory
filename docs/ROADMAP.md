@@ -115,9 +115,14 @@ invariant. The Rust `qf-pgpe` engine in rusty-SUNDIALS is the natural base, exte
 - *Kill criterion:* if linking makes no energy-matched difference, SCT's causal claim is recorded as
   2D-specific.
 
-**B4. Close the round-3 finite-size question (C2).** *(S, running)* The L = 128 rerun with doubled
-equilibration is in progress in the origin programme. Its admission result decides whether the
-finite-size ladder comparison is void or restored.
+**B4. Close the round-3 finite-size question (C2).** *(S, **done**; follow-up M)* The L = 128 rerun with
+doubled equilibration (origin CLAIM-065): admission 2/6 → 5/6, so the admission failure was an equilibration
+artefact. But the finite-size offset η·K − 1 still **grows** with L, at every energy, and this is no longer
+attributable to selection — contrary to the pre-registered expectation that it shrinks.
+- *Follow-up (M):* an η fit whose window scales with L, plus a third box size (L = 96 or 192), to decide
+  between an estimator systematic and genuine logarithmic corrections near BKT.
+- *Kill criterion:* if the growth survives an L-scaled fit at three sizes, record it as a real finite-size
+  effect of this model and revise the "η·n_s·λ² = 1 to 12–27%" statement's scope to L ≤ 64.
 
 **B5. The cosmological bound, from toy statistic to likelihood.** *(L)* Replace the reproduced 3-bin χ²
 with a real Planck likelihood (CAMB/CLASS module for the phase-transition signal, plus a sampler). The

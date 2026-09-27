@@ -46,6 +46,7 @@ it.
 | CLAIM-049 | CONFIRMED (3 of 4 pass; B2 fails a threshold, not a direction) | On a torus, density is blind to an imposed sector (1–4%) while injected pairs move it 21–118% | CS; notebook 02 |
 | CLAIM-051 | CONFIRMED (on a recalibrated statistic) | B2 recalibrated per injected vortex; agrees across seeds to 8% | origin programme |
 | CLAIM-048 | **FAIL / INCONCLUSIVE** (honest negative) | Round-3 finite-size ladder at L = 128: admission failure; the comparison is void, not positive | origin programme |
+| CLAIM-065 | CONFIRMED (admission failure was an equilibration artefact) / **FAIL, robust** (C1) / not bracketed (C2) | The L = 128 rerun with doubled equilibration: admission 2/6 → 5/6 (previously admitted runs unchanged); the finite-size offset η·K − 1 still **grows** with L at every energy (ratio 2.50), now shown not to be a selection artefact; magnitude uncertain, interpretation open; one run still unphysical (not a trapped winding sector) | origin programme, `PGPE_R3_RESULTS.md` Part C2 |
 | CLAIM-058 | VERIFIED (independent reproduction) | Koren–Tsai–Wang's CMB bound reproduced from its equations and Planck 2018 data | notebook 03 |
 | CLAIM-061 | VERIFIED, **quantitative basis corrected** (SCT-002) | Exact bubble-time spectrum: worst case within ×3.16; a TT-only successor tightens the bound by at most ~1.4× | notebook 03 |
 
