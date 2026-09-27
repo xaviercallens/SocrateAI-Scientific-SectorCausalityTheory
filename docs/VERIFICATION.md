@@ -56,9 +56,9 @@ that two kernels accept the proofs, with only the permitted axioms, over exactly
 it without network or privileges (the origin programme used
 `systemd-run --user --property=RestrictAddressFamilies=~AF_UNIX`).
 
-Status inherited from the origin programme (same files, same Mathlib pin): **all 14 modules accepted by
-both kernels**, with negative controls failing as they must. Re-running Comparator in this repository
-is how you confirm that for yourself, rather than trusting the inherited record.
+Status: **all 14 modules accepted by both kernels, re-run in this repository** on 2026-09-27 (`LEDGER.md`,
+SCT-005), matching the origin programme's record; negative controls fail as they must. Re-running
+Comparator yourself is how you confirm it rather than trusting either record.
 
 ## Negative controls
 

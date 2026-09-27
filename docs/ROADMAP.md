@@ -90,8 +90,8 @@ and a declaration graph for `lean/`, following the tooling of the sibling Agora-
 Its `leangraph` accepts a root/target and has not yet been tried on this repository.
 - *Deliverable:* a browsable map that makes "where the Lean stops" visible.
 
-**A4. Close the inherited-verification gap.** *(S, running)* Comparator's second kernel re-run *in this
-repository* for all 14 modules (9/14 accepted when this was written), to be recorded as `SCT-005`.
+**A4. Close the inherited-verification gap.** *(S, **done**)* Comparator's second kernel re-run *in this
+repository*: 14/14 modules accepted by both nanoda and the Lean kernel (`SCT-005`).
 
 ### Track B — Numerical: strengthen the causal claim where it is weakest
 
