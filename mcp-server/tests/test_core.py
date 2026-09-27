@@ -135,10 +135,33 @@ def test_verify_rejects_bad_module_name():
     assert r["ran"] is False and "invalid" in r["reason"]
 
 
-def test_verify_without_mathlib_cache_does_not_pretend(tmp_path):
+def test_verify_without_toolchain_does_not_pretend(tmp_path, monkeypatch):
+    """No lake anywhere (empty PATH, HOME without ~/.elan): ran=False, never a pass."""
     (tmp_path / "Foo.lean").write_text("theorem foo : True := trivial\n")
+    empty = tmp_path / "emptybin"
+    empty.mkdir()
+    monkeypatch.setenv("PATH", str(empty))
+    monkeypatch.setenv("HOME", str(tmp_path))
+    r = core.verify_module("Foo", ldir=tmp_path)
+    assert r["ran"] is False and "toolchain" in r["reason"]
+    assert "not certify that the statement is the right physics" in r["caveat"]
+
+
+def test_verify_without_mathlib_cache_does_not_pretend(tmp_path, monkeypatch):
+    """A lake exists but the Mathlib cache does not: ran=False, and lake is never invoked.
+    Hermetic: a stub `lake` records any invocation, so the test does not depend on whether the
+    machine running it has a real Lean toolchain (CI runners do not)."""
+    (tmp_path / "Foo.lean").write_text("theorem foo : True := trivial\n")
+    bindir = tmp_path / "bin"
+    bindir.mkdir()
+    marker = tmp_path / "lake_was_invoked"
+    stub = bindir / "lake"
+    stub.write_text(f"#!/bin/sh\ntouch {marker}\n")
+    stub.chmod(0o755)
+    monkeypatch.setenv("PATH", str(bindir))
     r = core.verify_module("Foo", ldir=tmp_path)
     assert r["ran"] is False and "Mathlib build cache" in r["reason"]
+    assert not marker.exists(), "lake must not run when the Mathlib cache is missing"
     assert "not certify that the statement is the right physics" in r["caveat"]
 
 

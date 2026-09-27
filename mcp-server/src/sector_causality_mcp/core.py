@@ -310,8 +310,8 @@ def verify_module(module: str, ldir: Path | None = None, timeout: int = 900) -> 
     mathlib_build = ldir / ".lake" / "packages" / "mathlib" / ".lake" / "build"
     if not mathlib_build.exists():
         return {"ran": False,
-                "reason": f"Mathlib build cache not found ({mathlib_build}); run `lake update && "
-                          "lake exe cache get` in the lean directory first",
+                "reason": f"Mathlib build cache not found ({mathlib_build}); run `lake exe cache get` "
+                          "in the lean directory first (lake-manifest.json pins every dependency)",
                 "caveat": caveat}
     try:
         p = subprocess.run([lake, "env", "lean", f.name], cwd=ldir, capture_output=True, text=True,
