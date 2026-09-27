@@ -1,0 +1,19 @@
+SocrateAI-Scientific-SectorCausalityTheory
+Copyright 2026 Xavier Callens
+
+Code (Lean, Python notebooks, the MCP server, scripts): MIT -- see LICENSE.
+Papers and documentation (papers/, docs/, *.md): Creative Commons Attribution 4.0 (CC BY 4.0).
+
+Origin. The Lean modules in lean/, the three papers in papers/, and the numerical methods reproduced
+in notebooks/ were first developed in SocrateAI-Scientific-QuantumFluids
+(https://github.com/xaviercallens/SocrateAI-Scientific-QuantumFluids, same author, code MIT OR
+Apache-2.0, papers CC BY 4.0) and are republished here, by their author, under the licences above.
+
+Third-party material, NOT covered by the above:
+  * Mathlib (Apache-2.0), fetched at build time by lean/lakefile.lean, not vendored.
+  * data/planck2018_tt_full/: the Planck 2018 temperature power spectrum
+    (COM_PowerSpect_CMB-TT-full_R3.01.txt), a public product of the ESA Planck mission, obtained from
+    the Planck Legacy Archive (https://pla.esac.esa.int). Redistributed unmodified for reproducibility,
+    with attribution: Planck Collaboration, "Planck 2018 results. VI. Cosmological parameters,"
+    Astron. Astrophys. 641, A6 (2020), arXiv:1807.06209. It remains the work of its authors.
+  * Every physical result cited in papers/ belongs to its authors and is cited, not re-licensed.

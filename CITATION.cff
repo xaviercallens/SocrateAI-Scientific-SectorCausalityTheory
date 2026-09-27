@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use or discuss this theory, please cite the foundation paper below."
+title: "Sector Causality Theory: when does self-duality cause physics?"
+type: software
+authors:
+  - family-names: Callens
+    given-names: Xavier
+    affiliation: SocrateAI Research
+license: MIT
+repository-code: "https://github.com/xaviercallens/SocrateAI-Scientific-SectorCausalityTheory"
+abstract: >-
+  The dedicated home of the Sector Causality Theory: a criterion stating that a self-dual point is
+  forced to be physically distinguished if and only if it exchanges two inequivalent sectors on a
+  discrete fixed-point set. Contains the foundation paper and its two companion papers, a
+  self-contained Lean 4 / Mathlib formalization (116 kernel-checked theorems across 14 modules,
+  re-verified by a second independent kernel), reproduction notebooks, and an MCP server exposing the
+  theory's case table and theorems to scientists and AI agents.
+keywords: [duality, self-duality, topological sectors, phase transitions, Lean 4, Mathlib, formal verification, interventionist causation, Model Context Protocol]
+preferred-citation:
+  type: article
+  title: "When does self-duality cause physics? A machine-checked criterion, tested across sixteen candidate physical systems, an interventional experiment, and real cosmological data"
+  authors:
+    - family-names: Callens
+      given-names: Xavier
+  year: 2026
+  doi: 10.5281/zenodo.22985863
+references:
+  - type: software
+    title: "QuantumFluids: a machine-checked Lean 4 library of quantum-fluid structure"
+    authors:
+      - family-names: Callens
+        given-names: Xavier
+    doi: 10.5281/zenodo.22855581
+    notes: "The origin programme: the full Lean library, the interventional experiment's raw results, and every companion paper."

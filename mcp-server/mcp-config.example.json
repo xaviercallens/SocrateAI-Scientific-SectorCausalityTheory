@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "sector-causality": {
+      "command": "/path/to/SocrateAI-Scientific-SectorCausalityTheory/mcp-server/.venv/bin/sector-causality-mcp",
+      "args": [],
+      "env": {
+        "SCT_REPO_ROOT": "/path/to/SocrateAI-Scientific-SectorCausalityTheory"
+      }
+    },
+    "sundials": {
+      "command": "/path/to/rusty-SUNDIALS/target/release/sundials-mcp",
+      "args": [],
+      "env": {
+        "SUNDIALS_MCP_TIMEOUT_SECS": "120"
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "source": "papers/sector_thesis.tex, Table 1 (tab:cases); full arguments in papers/duality_sector.tex and its six dated addenda",
+  "verdict_vocabulary": {
+    "forced": "Self-dual point on a discrete fixed-point set exchanging two inequivalent, gapped sectors; forced to be the transition.",
+    "not_forced": "Self-dual point on a continuous moduli space with enhanced symmetry; a point like any other, not a cause.",
+    "constraint": "Self-duality, if the fixed point is self-dual, pins an exact number; the dynamics causes the transition.",
+    "organisation": "The duality organises a diagram; a different mechanism does the causing.",
+    "preferred_equilibrium": "Both dual sectors populated and competing; the self-dual point is a preferred equilibrium, not a transition.",
+    "open_question": "The duality is verified, but the literature does not settle whether a self-dual point exists or is distinguished.",
+    "excluded_not_a_duality": "Not a verdict of the criterion: on reading the primary literature, the candidate is not a duality at all.",
+    "excluded_no_self_map": "Not a verdict of the criterion: the duality relates different theories, so there is no fixed point to ask about."
+  },
+  "cases": [
+    {
+      "id": "ising",
+      "name": "Ising (Kramers-Wannier)",
+      "paper_case": "Ising (Kramers--Wannier)",
+      "paper_verdict": "Forced",
+      "verdict": "forced",
+      "why": "Discrete fixed point; order/disorder sectors inequivalent and gapped.",
+      "citations": [
+        {"key": "KramersWannier1941", "id": "doi:10.1103/PhysRev.60.252"},
+        {"key": "FradkinSusskind1978", "id": "doi:10.1103/PhysRevD.17.2637"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": ["SectorDuality"],
+      "note": "The Ising duality itself is cited, not formalised here. SectorDuality proves the Z_N Fourier skeleton (its N=2 case is Kramers-Wannier gauging applied twice); it does not prove the Ising critical temperature."
+    },
+    {
+      "id": "so3_yang_mills",
+      "name": "SO(3) Yang-Mills at theta = pi",
+      "paper_case": "$SO(3)$ Yang--Mills, $\\theta=\\pi$",
+      "paper_verdict": "Forced",
+      "verdict": "forced",
+      "why": "Self-dual point separates a Z2 TQFT from the trivial phase; anomaly-forced.",
+      "citations": [
+        {"key": "KaidiOhmoriZheng2022", "id": "doi:10.1103/physrevlett.128.111601"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": "The forcing mechanism is an anomaly argument, not the duality map (duality_sector.tex, addendum 1)."
+    },
+    {
+      "id": "potts",
+      "name": "Potts / random-cluster (q >= 1)",
+      "paper_case": "Potts / random-cluster ($q\\geq1$)",
+      "paper_verdict": "Forced",
+      "verdict": "forced",
+      "why": "Self-dual point IS the critical point, proved for every q, continuous or not.",
+      "citations": [
+        {"key": "BeffaraDuminilCopin2012", "id": "doi:10.1007/s00440-011-0353-8"},
+        {"key": "DuminilCopinSidoraviciusTassion2017", "id": "doi:10.1007/s00220-016-2759-8"},
+        {"key": "DuminilCopinGagnebinHarelManolescuTassion2021", "id": "doi:10.24033/asens.2485"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": "Self-duality pins where the transition is, not its order: continuous for 1<=q<=4, discontinuous for q>4 (separate theorems). Added 2026-09-27 (duality_sector.tex, addendum 6)."
+    },
+    {
+      "id": "string_gas",
+      "name": "String-gas cosmology",
+      "paper_case": "String-gas cosmology",
+      "paper_verdict": "Preferred equilibrium",
+      "verdict": "preferred_equilibrium",
+      "why": "Both winding and momentum sectors populated and compete.",
+      "citations": [
+        {"key": "BrandenbergerVafa1989", "id": "doi:10.1016/0550-3213(89)90037-0"},
+        {"key": "Brandenberger2008", "id": "arXiv:0808.0746"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": ["CompactBoson"],
+      "note": "The Hagedorn exit is a sector event (winding annihilation); T-duality is the symmetry of the spectrum it is described in."
+    },
+    {
+      "id": "compact_boson_bkt",
+      "name": "Compact boson / BKT",
+      "paper_case": "Compact boson / BKT",
+      "paper_verdict": "Not forced",
+      "verdict": "not_forced",
+      "why": "Continuous line of fixed points; R = sqrt2 (self-dual) differs from 2*sqrt2 (vortex threshold).",
+      "citations": [
+        {"key": "NelsonKosterlitz1977", "id": "doi:10.1103/PhysRevLett.39.1201"},
+        {"key": "Savit1980", "id": "doi:10.1103/RevModPhys.52.453"}
+      ],
+      "lean_modules": ["CompactBoson"],
+      "related_lean_modules": [],
+      "note": "Key theorems: QuantumFluids.CompactBoson.partition_dual, electric_mul_magnetic, selfDual_radius, vortex_marginal_radius, bkt_not_selfDual."
+    },
+    {
+      "id": "superconductor_insulator",
+      "name": "Superconductor-insulator transition",
+      "paper_case": "Superconductor--insulator",
+      "paper_verdict": "Constraint",
+      "verdict": "constraint",
+      "why": "Duality pins a resistance if self-dual; vortex/charge proliferation causes the transition.",
+      "citations": [
+        {"key": "Fisher1990", "id": "doi:10.1103/PhysRevLett.65.923"},
+        {"key": "DasguptaHalperin1981", "id": "doi:10.1103/PhysRevLett.47.1556"},
+        {"key": "FisherLee1989", "id": "doi:10.1103/PhysRevB.39.2756"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": ""
+    },
+    {
+      "id": "quantum_hall_fricke",
+      "name": "Quantum Hall, Gamma_0(2) / Fricke",
+      "paper_case": "Quantum Hall, $\\Gamma_0(2)$/Fricke",
+      "paper_verdict": "Organisation",
+      "verdict": "organisation",
+      "why": "Organises the plateau diagram; Laughlin's argument causes quantisation.",
+      "citations": [
+        {"key": "LutkenRoss1992", "id": "doi:10.1103/PhysRevB.45.11837"},
+        {"key": "Laughlin1981", "id": "doi:10.1103/PhysRevB.23.5632"}
+      ],
+      "lean_modules": ["QHFricke", "Fricke"],
+      "related_lean_modules": ["DualLength"],
+      "note": "The Fricke element fixes the critical orbit but is not a symmetry of the plateaux (QHFricke)."
+    },
+    {
+      "id": "rcft_verlinde",
+      "name": "RCFT / Verlinde (su(2) level 1)",
+      "paper_case": "RCFT / Verlinde ($\\widehat{su}(2)_1$)",
+      "paper_verdict": "Not forced",
+      "verdict": "not_forced",
+      "why": "Self-dual radius on a continuous line of RCFT fixed points.",
+      "citations": [
+        {"key": "Verlinde1988", "id": "doi:10.1016/0550-3213(88)90603-7"},
+        {"key": "MooreSeiberg1989", "id": "doi:10.1007/BF01238857"},
+        {"key": "PaceChatterjeeShao2024", "id": "arXiv:2412.18606"}
+      ],
+      "lean_modules": ["RCFTDuality"],
+      "related_lean_modules": ["SectorDuality"],
+      "note": "RCFTDuality proves a 2x2 integer-matrix identity (S^2 = 2*1, symmetric, det = -2); that this matrix IS the su(2)_1 Kac-Peterson S-matrix is representation theory supplied as prose, not checked."
+    },
+    {
+      "id": "level_rank_fqhe",
+      "name": "Particle-vortex / level-rank duality (FQHE, nu = 1/2)",
+      "paper_case": "Particle-vortex / level-rank (FQHE, $\\nu=\\tfrac12$)",
+      "paper_verdict": "Constraint",
+      "verdict": "constraint",
+      "why": "Forces an exact Berry phase and Hall conductance; not itself a transition.",
+      "citations": [
+        {"key": "Son2015", "id": "doi:10.1103/PhysRevX.5.031027"},
+        {"key": "SeibergSenthilWangWitten2016", "id": "doi:10.1016/j.aop.2016.08.007"},
+        {"key": "HsinSeiberg2016", "id": "doi:10.1007/JHEP09(2016)095"},
+        {"key": "NaculichSchnitzer2007", "id": "doi:10.1088/1126-6708/2007/06/023"}
+      ],
+      "lean_modules": ["LevelRankDuality"],
+      "related_lean_modules": [],
+      "note": "LevelRankDuality proves only the Young-diagram box-transpose bijection, not S,T-matrix preservation. At N=K the labels close up but the physics does not (Hsin-Seiberg Eq. 4.18: SU(N)_N relates to its level reversal) -- no self-dual-point question there (addendum 6)."
+    },
+    {
+      "id": "k3_dyon_lattice",
+      "name": "K3 x T^2 dyon lattice; D1-D5-P-KK sequel",
+      "paper_case": "K3$\\times T^2$ dyon lattice; D1-D5-P-KK sequel",
+      "paper_verdict": "Organisation",
+      "verdict": "organisation",
+      "why": "Class number counts sectors at fixed entropy; attractor mechanism causes moduli.",
+      "citations": [
+        {"key": "Moore1998", "id": "arXiv:hep-th/9807087"},
+        {"key": "Sen2008review", "id": "doi:10.1007/s10714-008-0626-4"},
+        {"key": "Sen2007dyon", "id": "doi:10.1088/1126-6708/2007/09/045"}
+      ],
+      "lean_modules": ["ChargeLattice"],
+      "related_lean_modules": [],
+      "note": "disc_sl2_invariant transfers verbatim to the 4D-lifted D1-D5-P-KK dyon; the class-number statement does not; Strominger-Vafa/Callan-Maldacena formulas are out of scope."
+    },
+    {
+      "id": "seiberg",
+      "name": "Seiberg duality (4D N=1 SQCD)",
+      "paper_case": "Seiberg duality (4D $\\mathcal N=1$)",
+      "paper_verdict": "Not forced",
+      "verdict": "not_forced",
+      "why": "Conformal window is one continuous phase; N_c = N_f/2 not distinguished.",
+      "citations": [
+        {"key": "Seiberg1994", "id": "doi:10.1016/0550-3213(94)00023-8"},
+        {"key": "IntriligatorSeiberg1996", "id": "doi:10.1016/0920-5632(95)00626-5"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": "Prose only: the formalisable content of N_c -> N_f - N_c is a one-line integer involution."
+    },
+    {
+      "id": "montonen_olive",
+      "name": "Montonen-Olive S-duality (N=4 SYM)",
+      "paper_case": "Montonen--Olive $S$-duality ($\\mathcal N=4$ SYM)",
+      "paper_verdict": "Not forced",
+      "verdict": "not_forced",
+      "why": "tau = i, rho are enhanced-symmetry points on a continuous coupling.",
+      "citations": [
+        {"key": "MontonenOlive1977", "id": "doi:10.1016/0370-2693(77)90076-4"},
+        {"key": "KapustinWitten2007", "id": "doi:10.4310/cntp.2007.v1.n1.a1"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "mathlib_lemmas": ["ModularGroup.S_mul_S_eq", "ModularGroup.stabilizer_I", "ModularGroup.stabilizer_ρ"],
+      "note": "No project Lean file needed: Mathlib's own Mathlib.NumberTheory.Modular proves the stabiliser facts. Open caveat: at tau=i, S maps the theory to itself only after exchanging global forms (SU(N) vs PSU(N))."
+    },
+    {
+      "id": "calabi_yau_mirror",
+      "name": "Calabi-Yau mirror symmetry",
+      "paper_case": "Calabi--Yau mirror symmetry",
+      "paper_verdict": "Open question",
+      "verdict": "open_question",
+      "why": "No citable self-mirror threefold exists; duality itself verified as T-duality.",
+      "citations": [
+        {"key": "StromingerYauZaslow1996", "id": "doi:10.1016/0550-3213(96)00434-8"},
+        {"key": "CandelasDerrickParkes1993", "id": "doi:10.1016/0550-3213(93)90276-U"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": "Mirror symmetry generically relates two different manifolds; a rigid CY (h^{2,1}=0) has no smooth mirror. Mathlib has no Calabi-Yau content."
+    },
+    {
+      "id": "topological_superconductors",
+      "name": "Topological superconductors / tenfold way",
+      "paper_case": "Topological superconductors",
+      "paper_verdict": "Not a duality",
+      "verdict": "excluded_not_a_duality",
+      "why": "K-theory classification, not an exchange.",
+      "citations": [
+        {"key": "RyuSchnyderFurusakiLudwig2010", "id": "doi:10.1088/1367-2630/12/6/065010"},
+        {"key": "Kitaev2001", "id": "doi:10.1070/1063-7869/44/10S/S29"},
+        {"key": "AltlandZirnbauer1997", "id": "doi:10.1103/PhysRevB.55.1142"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": "The Kitaev chain = transverse-field Ising (Jordan-Wigner) link is the already-claimed Ising case, not a new instance."
+    },
+    {
+      "id": "ising_3d_wegner",
+      "name": "3D Ising / Wegner duality",
+      "paper_case": "3D Ising / Wegner duality",
+      "paper_verdict": "No self-map",
+      "verdict": "excluded_no_self_map",
+      "why": "Maps to a different theory (a Z2 gauge theory).",
+      "citations": [
+        {"key": "Wegner1971", "id": "doi:10.1063/1.1665530"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": ""
+    },
+    {
+      "id": "ads_cft",
+      "name": "AdS/CFT (weak-strong)",
+      "paper_case": "AdS/CFT",
+      "paper_verdict": "No self-map",
+      "verdict": "excluded_no_self_map",
+      "why": "Coupling-space equivalence; no conjectured involution.",
+      "citations": [
+        {"key": "Maldacena1998", "id": "doi:10.4310/atmp.1998.v2.n2.a1"}
+      ],
+      "lean_modules": [],
+      "related_lean_modules": [],
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Source: rusty-SUNDIALS PR #57 (https://github.com/xaviercallens/rusty-SUNDIALS/pull/57), crate qf-cmb-cascade,
+# `cargo run -p qf-cmb-cascade --release --example fisher_grid` (full grid, 530 s). Copied verbatim from the PR
+# description; r_cv is the bound with the pure cosmic-variance floor (f_sky=0.7) in place of Planck's bars.
+# Blank r_cv = not part of the Fisher sub-grid.
+beta_over_H,zpt,ell_peak,r_planck,r_cv
+10,0.1,3,0.003095,0.002221
+20,0.1,3,0.005741,
+50,0.1,3,0.023228,0.017495
+100,0.1,5,0.084067,0.078898
+200,0.1,12,0.254330,0.253782
+500,0.1,25,1.425008,1.421963
+10,0.2,3,0.001853,0.001334
+20,0.2,3,0.004654,
+50,0.2,5,0.024944,0.023362
+100,0.2,9,0.080147,0.079129
+200,0.2,25,0.274491,0.273945
+500,0.2,30,2.203220,1.943501
