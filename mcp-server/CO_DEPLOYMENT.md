@@ -6,14 +6,16 @@ used directly from the shell.
 | Component | Repository | Interface | What it gives an agent |
 |---|---|---|---|
 | `sector-causality` | this repository, `mcp-server/` | MCP (Python, stdio) | cases, criterion, Lean theorems, kernel checks, papers, landmark reproductions |
-| `sundials` | [rusty-SUNDIALS](https://github.com/xaviercallens/rusty-SUNDIALS), `crates/sundials-mcp` ([PR #58](https://github.com/xaviercallens/rusty-SUNDIALS/pull/58)) | MCP (Rust, stdio) | CVODE named problems with known-answer checks; the `qf-pgpe` Gross–Pitaevskii solver |
+| `sundials` | [rusty-SUNDIALS](https://github.com/xaviercallens/rusty-SUNDIALS), `crates/sundials-mcp` ([PR #58](https://github.com/xaviercallens/rusty-SUNDIALS/pull/58), merged) | MCP (Rust, stdio) | CVODE named problems with known-answer checks; the `qf-pgpe` Gross–Pitaevskii solver; the `qf-cmb-cascade` CMB bound; BAO distances |
 | LeanMaster tooling | [SocrateAI-Scientific-Agora-LeanMaster](https://github.com/xaviercallens/SocrateAI-Scientific-Agora-LeanMaster) | shell / browser (**no MCP server**) | a Lean Blueprint (`blueprint/`) and the LeanGraph dependency explorer (`leangraph/`, `graph/index.html`) |
 
 Status of each piece, stated plainly: both MCP servers are built and tested, and the official Python MCP
 client has been tested against both (`tests/test_stdio_e2e.py`, `tests/test_interop_rusty_sundials.py`).
-`sundials-mcp` is in an open PR (#58) based on rusty-SUNDIALS `main`; it does **not** yet expose the CMB
-bound crate (`crates/qf-cmb-cascade`, open PR #57) — the CMB landmark available today is
-`sector-causality`'s `reproduce("cmb_correlator_zero")`. Agora-LeanMaster has no MCP server and none is
+`sundials-mcp` is merged into rusty-SUNDIALS `main` (PR #58, with `crates/qf-cmb-cascade` from PR #57 and
+`crates/qf-bao-distances` from PR #61). Its tools are `about`, `list_problems`, `solve`, `pgpe_run`,
+`cmb_bound` and `bao_distances`. The CMB landmark is available two ways: `sector-causality`'s
+`reproduce("cmb_correlator_zero")` (Python) and `sundials`'s `cmb_bound` (Rust: the Koren–Tsai–Wang
+2σ bound against the real Planck 2018 TT data, 10–30 s per call under a 120 s worker timeout). Agora-LeanMaster has no MCP server and none is
 provided here.
 
 ## 1. Build and register both servers
@@ -24,8 +26,8 @@ cd SocrateAI-Scientific-SectorCausalityTheory/mcp-server
 python3 -m venv .venv && . .venv/bin/activate && pip install -e .
 ( cd ../lean && lake exe cache get )          # optional: enables verify_theorem
 
-# the solver server (from PR #58 until it merges)
-cd ../../rusty-SUNDIALS && git fetch origin feat/mcp-server && git checkout feat/mcp-server
+# the solver server (on rusty-SUNDIALS main)
+cd ../../rusty-SUNDIALS && git checkout main && git pull
 cargo build --release -p sundials-mcp
 
 # register (Claude Code; other MCP clients: see mcp-config.example.json)
